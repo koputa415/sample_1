@@ -1,0 +1,11 @@
+services:
+  jupyterlab:
+    build: .
+    image: jupyterlab-uttc-ai-curriculum-img
+    container_name: jupyterlab-uttc-ai-curriculum
+    working_dir: /work
+    volumes:
+      - ./work:/work
+    ports:
+      - "8888:8888"
+    command: jupyter-lab --ip 0.0.0.0 --allow-root --NotebookApp.token='' -b localhost
